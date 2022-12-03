@@ -1,0 +1,176 @@
+.eventdetailscreen {
+  @apply mb-24;
+  &_header {
+    @apply flex pt-6 pb-4 justify-between items-center px-4;
+    &_left {
+      @apply flex items-center;
+      &_details {
+        font-size: 13px;
+        @apply pl-2;
+        &_title {
+          font-weight: 700;
+          line-height: 129.5%;
+        }
+        &_subtitle {
+          font-weight: 400;
+          line-height: 129.5%;
+        }
+      }
+    }
+  }
+  &_footer {
+    @apply fixed w-screen flex items-center justify-center bottom-0 z-40 border-t-2 p-3;
+    background: #1d1d1d;
+    border: #2c2c2f;
+    &_button {
+      @apply flex w-full justify-center items-center;
+      padding: 4px 12px;
+      gap: 10px;
+      background: #fc3b7d;
+      border: 1.5px solid #121212;
+      border-radius: 4px;
+      &_text {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &_banner {
+    @apply flex w-full;
+    img {
+      width: 100%;
+    }
+  }
+  &_maincontainer {
+    @apply flex flex-col px-5 w-full pt-4;
+    &_category {
+      @apply font-medium uppercase pt-4;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: -0.369089px;
+      color: #fc3b7d;
+    }
+    &_title {
+      @apply font-bold text-white;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.369089px;
+    }
+    &_subtitle {
+      @apply font-medium mt-2;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 152%;
+      letter-spacing: 0.01em;
+      color: #808080;
+    }
+    &_date {
+      @apply flex items-center mt-4;
+      img {
+        height: 40px;
+      }
+      &_data {
+        @apply pl-2;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 161.1%;
+      }
+    }
+    &_ticketdetails {
+      @apply flex justify-between;
+      &_price {
+        @apply flex items-center mt-4;
+        img {
+          height: 40px;
+        }
+        &_data {
+          @apply pl-2;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 161.1%;
+        }
+      }
+      &_seats {
+        @apply flex items-center mt-4;
+        img {
+          height: 40px;
+        }
+        &_data {
+          @apply pl-2;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 161.1%;
+        }
+      }
+    }
+    &_break {
+      @apply w-full my-6;
+      border: 1px solid #dddddd;
+    }
+    &_location {
+      @apply flex items-center;
+      img {
+        height: 40px;
+      }
+      &_data {
+        @apply pl-2;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 161.1%;
+      }
+    }
+    &_about {
+      &_title {
+        @apply font-medium text-white;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &_description {
+        @apply pt-4;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 145%;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+    &_speaker {
+      &_title {
+        @apply py-4;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 1rem;
+        &_card {
+          @apply flex flex-col justify-center items-center gap-1 py-4;
+          background: #1d1d1d;
+          &_title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 15px;
+          }
+          &_subtitle {
+            @apply uppercase;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 13px;
+
+            color: #b0b0b0;
+          }
+        }
+      }
+    }
+  }
+}
+.ticketdetailscreen{
+    
+}
