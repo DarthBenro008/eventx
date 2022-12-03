@@ -1,0 +1,169 @@
+.ticketDetailScreen {
+  @apply px-4 pb-28;
+  background-color: #000000;
+  &_backgroundGradient{
+    position: absolute;
+    filter: blur(87.1569px);
+transform: rotate(-72.51deg);
+  z-index: 0;
+
+  }
+  &_header {
+    @apply flex flex-col justify-center items-center w-full pt-6;
+    &_title {
+      @apply text-center mt-2;
+      font-weight: 500;
+      font-size: 12.9157px;
+      line-height: 129.5%;
+    }
+    &_subtitle {
+      @apply text-center;
+      font-weight: 700;
+      font-size: 12.9157px;
+      line-height: 129.5%;
+    }
+    &_message {
+      @apply mt-6 mb-4;
+      font-weight: 800;
+      font-size: 30.75px;
+      line-height: 135.1%;
+      /* identical to box height, or 42px */
+
+      letter-spacing: 0.04em;
+
+      background: linear-gradient(
+        91.28deg,
+        #ffffff 1.09%,
+        rgba(255, 255, 255, 0) 134.61%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+  &_ticketdetails {
+    @apply flex flex-col w-full bg-white py-10 px-4;
+    border-radius: 10px;
+    &_title {
+      @apply flex flex-row justify-between capitalize pb-4;
+      color: #723fff;
+      font-weight: 500;
+      font-size: 12.1661px;
+      line-height: 16px;
+    }
+    &_value {
+      @apply flex flex-row justify-between;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+
+      color: #3c3c3c;
+      &_highlight {
+        text-transform: capitalize;
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          #f5bb6e 0deg,
+          #ec606c 127.5deg,
+          #4364ef 219.37deg,
+          #41d589 307.5deg,
+          #f5bb6e 360deg
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+  }
+  &_qrcontainer {
+    @apply flex flex-col w-full bg-white mt-4 rounded-t-xl;
+    &_top {
+      @apply flex flex-row justify-between items-center w-full px-4;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      color: #121212;
+      border-bottom: 2px dotted #c7c7c7;
+    }
+    &_bottom {
+      @apply px-4 flex justify-between py-3;
+      background: #f6f9ff;
+      color: #0d0e12;
+      font-weight: 500;
+      font-size: 14.1938px;
+      line-height: 18px;
+      &_title {
+        @apply pb-1;
+        font-weight: 500;
+        font-size: 12.1661px;
+        line-height: 16px;
+        text-transform: capitalize;
+        color: #723fff;
+      }
+    }
+  }
+  &_locationcontainer {
+    @apply flex items-center py-6;
+    img {
+      height: 40px;
+    }
+    &_data {
+      @apply pl-2;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 161.1%;
+    }
+  }
+  &_checklistcontainer {
+    &_title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 140%;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    &_networkingcontainer {
+      @apply flex justify-between w-full py-4 pl-4;
+      border: 1px solid #373737;
+border-radius: 2px;
+      &_left {
+        @apply flex flex-col;
+        &_title {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+
+          color: #ffffff;
+        }
+        &_subtitle {
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+
+          color: #757575;
+        }
+        &_button {
+          @apply flex mt-5 py-3 px-5 justify-center items-center w-fit;
+          border: 1px solid;
+        //   border-image-source: linear-gradient(
+        //     104.49deg,
+        //     #f13c88 69.64%,
+        //     #6343f2 90.73%,
+        //     #40ecc2 104.88%
+        //   );
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          color: #ffffff;
+          background: #151515;
+border-radius: 44px;
+        }
+      }
+    }
+  }
+}
