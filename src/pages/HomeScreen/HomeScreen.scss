@@ -1,0 +1,65 @@
+.homescreen {
+  @apply mb-24;
+  &_header {
+    @apply flex p-4 justify-between items-center top-0 fixed w-full;
+    background-color: #151515;
+    &_logo {
+      color: #919191;
+      font-size: 11px;
+    }
+    &_connect {
+      &_button {
+        @apply flex justify-center items-center text-center px-3 py-2 rounded-3xl text-sm;
+        background: #313131;
+        img {
+          @apply ml-2;
+        }
+      }
+    }
+  }
+  &_categories {
+    @apply mt-32;
+    &_list {
+      @apply overflow-x-auto flex;
+      &_category {
+        @apply p-2 border-2 mr-2 ml-4;
+        border-color: #6b6b6b;
+      }
+    }
+    &_cards {
+      @apply flex flex-col px-4;
+    }
+    &_card {
+      @apply w-full flex h-32 my-4;
+      background: #181818;
+      border: 1.2px solid #363636;
+      border-radius: 2px;
+      &_image {
+        @apply w-32 h-32;
+        background-color: burlywood;
+        border-radius: 2px;
+      }
+      &_details {
+        @apply p-2;
+        &_category {
+          font-size: 11px;
+          line-height: 150%;
+          color: #9b9b9b;
+        }
+        &_title {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 150%;
+          color: #ffffff;
+        }
+        &_locdate {
+          @apply flex mt-4;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+.homescreen::-webkit-scrollbar {
+  display: none;
+}
