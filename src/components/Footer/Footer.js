@@ -22,7 +22,8 @@ export default function Footer() {
       routePath === "/login" ||
       routePath === "/verify" ||
       routePath === "/wallet-create" ||
-      routePath.includes("/event/")
+      routePath.includes("/event/") ||
+      routePath.includes("/organizer/create")
     ) {
       setVisible(false);
       console.log("hi");

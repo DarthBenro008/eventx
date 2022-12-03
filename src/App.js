@@ -4,6 +4,7 @@ import HomeScreen from "./pages/HomeScreen/HomeScreen";
 import Footer from "./components/Footer/Footer";
 import EventDetailScreen from "./pages/EventDetailScreen/EventDetailScreen";
 import TicketScreen from "./pages/TicketScreen/TicketScreen";
+import EventCreateScreen from "./pages/EventCreateScreen/EventCreateScreen";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route exact path="/" component={HomeScreen} />
         <Route exact path = "/event/:id" component={EventDetailScreen}/>
         <Route exact path = "/ticket/:id" component={TicketScreen}/>
+        <Route exact path = "/organizer/create" component={EventCreateScreen}/>
         {/* <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/signup" component={SignupScreen} />
         <Route exact path="/verify" component={VerifyOTPScreen} /> */}
