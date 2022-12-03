@@ -31,12 +31,6 @@ export default function EventDetailScreen() {
         claimables: ["samosa", "hoodie"],
         image: "",
       },
-      platinum: {
-        num_of_tickets: 473,
-        price: 999,
-        claimables: ["samosa", "hoodie", "merch"],
-        image: "",
-      },
     },
     address:
       "Rohini Le Meridien New Delhi Windsor Place Janpath New Delhi, DL 110001",

@@ -22,7 +22,7 @@
     &_list {
       @apply overflow-x-auto flex;
       &_category {
-        @apply p-2 border-2 mr-2 ml-4;
+        @apply p-2 border-2 mr-2 ml-4 w-96;
         border-color: #6b6b6b;
       }
     }

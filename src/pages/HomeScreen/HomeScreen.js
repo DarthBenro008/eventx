@@ -1,5 +1,5 @@
 import "./HomeScreen.scss";
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import SocialLogin from "@biconomy/web3-auth";
 import { NotificationItem, chainNameType } from "@pushprotocol/uiweb";
 import { Revise } from "revise-sdk";
@@ -12,39 +12,43 @@ import eventx_logo from "../../assets/eventx_logo_white.svg";
 
 
 export default function HomeScreen() {
+
+  
   const eventsData = [
     {
-      category: "workshop",
+      category: "Workshop",
       name: "Let's Hudddle with the Dapp list",
       location: "Bangalore",
       date: "Sat, 24th Dec",
     },
     {
-      category: "entertainment",
+      category: "Entertainment",
       name: "Let's Hudddle with the Dapp list",
       location: "Bangalore",
       date: "Sat, 24th Dec",
     },
     {
-      category: "hackathon",
+      category: "Hackathon",
       name: "Let's Hudddle with the Dapp list",
       location: "Bangalore",
       date: "Sat, 24th Dec",
     },
     {
-      category: "workshop",
+      category: "Workshop",
       name: "Let's Hudddle with the Dapp list",
       location: "Bangalore",
       date: "Sat, 24th Dec",
     },
     {
-      category: "sports",
+      category: "Sports",
       name: "Let's Hudddle with the Dapp list",
       location: "Bangalore",
       date: "Sat, 24th Dec",
     },
 
   ];
+  const [data,setData] = useState(eventsData);
+  const [filterType, setFilterType] = useState("All");
   return (
     <article className="homescreen">
       <section className="homescreen_header">
@@ -58,12 +62,52 @@ export default function HomeScreen() {
           </div>
         </div>
       </section>
+      <section className="homescreen_banner">
+        <div>
+          <div></div>
+        </div>
+      </section>
       <section className="homescreen_categories">
         <div className="homescreen_categories_list">
+          <div
+            onClick={() => {
+              setFilterType("All");
+              setData(eventsData);
+            }}
+            style={
+              filterType === "All"
+                ? {
+                    backgroundColor: "#FC3B7D",
+                    border: "none"
+                  }
+                : {}
+            }
+            className="homescreen_categories_list_category"
+          >
+            ALL
+          </div>
           {eventsData.length > 0
             ? eventsData.map((_event, index) => {
                 return (
-                  <div className="homescreen_categories_list_category">
+                  <div
+                    onClick={() => {
+                      setFilterType(_event.category);
+                      setData(
+                        eventsData.filter(
+                          (data) => data.category === _event.category
+                        )
+                      );
+                    }}
+                    style={
+                      filterType === _event.category
+                        ? {
+                            backgroundColor: "#FC3B7D",
+                            border: "none",
+                          }
+                        : {}
+                    }
+                    className="homescreen_categories_list_category"
+                  >
                     {_event.category}
                   </div>
                 );
@@ -71,8 +115,8 @@ export default function HomeScreen() {
             : null}
         </div>
         <div className="homescreen_categories_cards">
-          {eventsData.length > 0
-            ? eventsData.map((_event, index) => {
+          {data.length > 0
+            ? data.map((_event, index) => {
                 return (
                   <div className="homescreen_categories_card">
                     <div className="homescreen_categories_card_image"></div>
@@ -88,11 +132,19 @@ export default function HomeScreen() {
                       </div>
                       <div className="homescreen_categories_card_details_locdate">
                         <div className="flex">
-                          <img className="mr-1" src={location_card_icon} alt="location" />{" "}
+                          <img
+                            className="mr-1"
+                            src={location_card_icon}
+                            alt="location"
+                          />{" "}
                           {_event.location}
                         </div>
                         <div className="flex ml-3">
-                          <img className="mr-1" src={date_card_icon} alt="date" />
+                          <img
+                            className="mr-1"
+                            src={date_card_icon}
+                            alt="date"
+                          />
                           {_event.date}
                         </div>
                       </div>
