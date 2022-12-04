@@ -9,11 +9,12 @@ import location_card_icon from "../../assets/location_card_icon.svg";
 import date_card_icon from "../../assets/date_card_icon.svg";
 import eventx_logo from "../../assets/eventx_logo_white.svg";
 import landing_picture from "../../assets/landing_picture.svg";
+import { useHistory } from "react-router-dom";
 
 
 
 export default function HomeScreen() {
-
+const history = useHistory();
   
   const eventsData = [
     {
@@ -58,7 +59,9 @@ export default function HomeScreen() {
           <div>Eventing made simpler</div>
         </div>
         <div className="homescreen_header_connect">
-          <div className="homescreen_header_connect_button">
+          <div onClick={()=>{
+            history.push("/organizer/create");
+          }} className="homescreen_header_connect_button">
             Create Event <img alt="x" src={X_logo} />
           </div>
           {/* <div class="dropdown-content">
