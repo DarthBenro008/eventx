@@ -124,7 +124,9 @@ const history = useHistory();
           {data.length > 0
             ? data.map((_event, index) => {
                 return (
-                  <div className="homescreen_categories_card">
+                  <div onClick={()=>{
+                    history.push("/event/3322");
+                  }} className="homescreen_categories_card">
                     <div className="homescreen_categories_card_image"></div>
                     <div className="homescreen_categories_card_details">
                       <div className="flex justify-between">
