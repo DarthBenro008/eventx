@@ -6,7 +6,7 @@ import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { useSnackbar } from "notistack";
 import Api from "../../utils/api";
 
-export default function QRScanModal({ showScanner, setShowScanner }) {
+export default function RedeemableScanModal({ showRedeemScanner, setShowRedeemScanner }) {
   const [data, setData] = useState("No result");
   const api = new Api(localStorage.getItem("jwt"));
 
@@ -51,7 +51,7 @@ export default function QRScanModal({ showScanner, setShowScanner }) {
   };
   return (
     <Modal
-      open={showScanner}
+      open={showRedeemScanner}
       aria-labelledby="loader"
       aria-describedby="loading"
       className="align-middle justify-center items-center outline-none justify-items-center flex h-screen"
@@ -87,7 +87,7 @@ export default function QRScanModal({ showScanner, setShowScanner }) {
         <div
           className="font-bold text-xl underline"
           onClick={() => {
-            setShowScanner(false);
+            setShowRedeemScanner(false);
           }}
         >
           Close

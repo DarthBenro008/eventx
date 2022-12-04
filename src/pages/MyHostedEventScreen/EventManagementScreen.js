@@ -11,11 +11,15 @@ import seat_card_icon from "../../assets/seat_card_icon.svg";
 import ticket_list_icon from "../../assets/ticket_list_icon.svg";
 import generic_icon from "../../assets/generic_icon.svg";
 import guest_icon from "../../assets/guest_icon.svg";
+import AttendanceScanModal from "./AttendanceScanModal";
+import RedeemableScanModal from "./RedeemableScanModal";
 
 export default function EventManagementScreen() {
   const [buyTicket, setBuyTicket] = useState(false);
   const [active, setActive] = useState("scan");
   const [payMethod, setPayMethod] = useState("polygon");
+  const [showAttendanceScanner, setShowAttendanceScanner]= useState(false);
+  const [showRedeemScanner, setShowRedeemScanner] = useState(false);
   const eventData = {
     title: "ETHIndia",
     location: "India",
@@ -53,6 +57,8 @@ export default function EventManagementScreen() {
       style={{ filter: buyTicket ? "blur(5px)" : "none" }}
       className="eventmanagementscreen"
     >
+        <AttendanceScanModal showAttendanceScanner={showAttendanceScanner} setShowAttendanceScanner={setShowAttendanceScanner}/>
+        <RedeemableScanModal showRedeemScanner={showRedeemScanner} setShowRedeemScanner={setShowRedeemScanner}/>
       <section className="eventmanagementscreen_header">
         <div className="eventmanagementscreen_header_left">
           <div className="eventmanagementscreen_header_left_back">
@@ -130,7 +136,7 @@ export default function EventManagementScreen() {
                 <div className="eventmanagementscreen_maincontainer_statistics_cards_card_title">
                   Open QR Code Scanner to check in folks
                 </div>
-                <div className="eventmanagementscreen_maincontainer_statistics_cards_card_button">
+                <div onClick={()=>{setShowAttendanceScanner(true)}} className="eventmanagementscreen_maincontainer_statistics_cards_card_button">
                   OPEN QR CODE
                 </div>
               </div>
