@@ -22,7 +22,7 @@ function App() {
         <Route exact path = "/organizer/event/:id" component = {EventManagementScreen}/>
 
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
