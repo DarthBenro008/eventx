@@ -4,7 +4,9 @@ import share_icon from "../../assets/share_icon.svg";
 import location_card_icon from "../../assets/location_card_icon.svg";
 import date_card_icon from "../../assets/date_card_icon.svg";
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 export default function MyEventScreen() {
+  let history = useHistory();
       const eventsData = [
         {
           category: "Workshop",
@@ -51,7 +53,15 @@ export default function MyEventScreen() {
           {data.length > 0
             ? data.map((_event, index) => {
                 return (
-                  <div className="myeventscreen_categories_card">
+                  <div
+                    onClick={() => {
+                      history.push({
+                        pathname: `/ticket/234e444545`,
+                        event: eventsData,
+                      });
+                    }}
+                    className="myeventscreen_categories_card"
+                  >
                     <div className="myeventscreen_categories_card_image"></div>
                     <div className="myeventscreen_categories_card_details">
                       <div className="flex justify-between">

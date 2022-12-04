@@ -66,15 +66,15 @@ export default function Footer() {
             Space
           </div>
         </Link>
-        <Link to="/profile" className="footer_navcontainer_tabcontainer">
+        <Link to="/organizer/events" className="footer_navcontainer_tabcontainer">
           <img
-            src={routePath === "/profile" ? profile_icon_active : profile_icon}
+            src={routePath === "/organizer/events" ? profile_icon_active : profile_icon}
             alt="profile"
           />
           <div
-            style={{ color: routePath === "/profile" ? "#FC3B7D" : "#ACACAC" }}
+            style={{ color: routePath === "/organizer/events" ? "#FC3B7D" : "#ACACAC" }}
           >
-            Profile
+            Hosted Events
           </div>
         </Link>
       </div>

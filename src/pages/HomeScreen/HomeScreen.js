@@ -59,7 +59,7 @@ export default function HomeScreen() {
         </div>
         <div className="homescreen_header_connect">
           <div className="homescreen_header_connect_button">
-            Switch Profile <img alt="x" src={X_logo} />
+            Create Event <img alt="x" src={X_logo} />
           </div>
           {/* <div class="dropdown-content">
             <a href="#">Register</a>
