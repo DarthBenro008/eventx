@@ -8,6 +8,7 @@ import share_icon from "../../assets/share_icon.svg";
 import location_card_icon from "../../assets/location_card_icon.svg";
 import date_card_icon from "../../assets/date_card_icon.svg";
 import eventx_logo from "../../assets/eventx_logo_white.svg";
+import landing_picture from "../../assets/landing_picture.svg";
 
 
 
@@ -58,14 +59,16 @@ export default function HomeScreen() {
         </div>
         <div className="homescreen_header_connect">
           <div className="homescreen_header_connect_button">
-            20 coins <img alt="x" src={X_logo} />
+            Switch Profile <img alt="x" src={X_logo} />
           </div>
+          {/* <div class="dropdown-content">
+            <a href="#">Register</a>
+            <a href="#">Switch Profile</a>
+          </div> */}
         </div>
       </section>
       <section className="homescreen_banner">
-        <div>
-          <div></div>
-        </div>
+        <img alt="landing" src={landing_picture}/>
       </section>
       <section className="homescreen_categories">
         <div className="homescreen_categories_list">
@@ -78,7 +81,7 @@ export default function HomeScreen() {
               filterType === "All"
                 ? {
                     backgroundColor: "#FC3B7D",
-                    border: "none"
+                    border: "none",
                   }
                 : {}
             }

@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import EventDetailScreen from "./pages/EventDetailScreen/EventDetailScreen";
 import TicketScreen from "./pages/TicketScreen/TicketScreen";
 import EventCreateScreen from "./pages/EventCreateScreen/EventCreateScreen";
+import MyEventScreen from "./pages/MyEventScreen/MyEventScreen";
 
 function App() {
   return (
@@ -14,9 +15,7 @@ function App() {
         <Route exact path = "/event/:id" component={EventDetailScreen}/>
         <Route exact path = "/ticket/:id" component={TicketScreen}/>
         <Route exact path = "/organizer/create" component={EventCreateScreen}/>
-        {/* <Route exact path="/login" component={LoginScreen} />
-        <Route exact path="/signup" component={SignupScreen} />
-        <Route exact path="/verify" component={VerifyOTPScreen} /> */}
+        <Route exact path = "/myevents" component = {MyEventScreen}/>
       </Switch>
       <Footer/>
     </Router>
