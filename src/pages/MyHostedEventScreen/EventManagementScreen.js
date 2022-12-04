@@ -11,10 +11,11 @@ import seat_card_icon from "../../assets/seat_card_icon.svg";
 import ticket_list_icon from "../../assets/ticket_list_icon.svg";
 import generic_icon from "../../assets/generic_icon.svg";
 import guest_icon from "../../assets/guest_icon.svg";
-import TicketListModal from "./TicketListModal";
 
 export default function EventManagementScreen() {
   const [buyTicket, setBuyTicket] = useState(false);
+  const [active, setActive] = useState("scan");
+  const [payMethod, setPayMethod] = useState("polygon");
   const eventData = {
     title: "ETHIndia",
     location: "India",
@@ -52,7 +53,6 @@ export default function EventManagementScreen() {
       style={{ filter: buyTicket ? "blur(5px)" : "none" }}
       className="eventmanagementscreen"
     >
-      <TicketListModal buyTicket={buyTicket} handleClose={handleClose} />
       <section className="eventmanagementscreen_header">
         <div className="eventmanagementscreen_header_left">
           <div className="eventmanagementscreen_header_left_back">
@@ -75,18 +75,12 @@ export default function EventManagementScreen() {
           <img src={share_icon} alt="share" />
         </div>
       </section>
-      <div className="eventmanagementscreen_banner">
-        <img src={event_banner} alt="event banner" />
-      </div>
       <section className="eventmanagementscreen_maincontainer">
         <div className="eventmanagementscreen_maincontainer_category">
           {eventData.category}
         </div>
         <div className="eventmanagementscreen_maincontainer_title">
           {eventData.name}
-        </div>
-        <div className="eventmanagementscreen_maincontainer_subtitle">
-          {eventData.short_description}
         </div>
         <div className="eventmanagementscreen_maincontainer_date">
           <img src={date_card_icon} alt="date" />
@@ -108,46 +102,80 @@ export default function EventManagementScreen() {
           <div className="eventmanagementscreen_maincontainer_location_data">{`${eventData.address}`}</div>
         </div>
         <div className="eventmanagementscreen_maincontainer_break"></div>
-        <div className="eventmanagementscreen_maincontainer_about">
-          <div className="eventmanagementscreen_maincontainer_about_title">
-            About the Event
-          </div>
-          <div className="eventmanagementscreen_maincontainer_about_description">{`${eventData.long_description}`}</div>
-        </div>
-        {eventData.speakers.length > 0 && (
-          <div className="eventmanagementscreen_maincontainer_speaker">
-            <div className="eventmanagementscreen_maincontainer_speaker_title">
-              Host/Speakers
+        <div className="eventmanagementscreen_maincontainer_statistics">
+          <div className="eventmanagementscreen_maincontainer_statistics_menu">
+            {" "}
+            <div
+              onClick={() => {
+                setActive("scan");
+              }}
+              style={active === "scan" ? { backgroundColor: "gray" } : null}
+              className="eventmanagementscreen_maincontainer_statistics_menu_items"
+            >
+              Organizing
             </div>
-            <div className="eventmanagementscreen_maincontainer_speaker_cards">
-              {eventData.speakers.map((speaker, index) => {
-                return (
-                  <div className="eventmanagementscreen_maincontainer_speaker_cards_card">
-                    <div className="rounded-full border-2">
-                      <img className="w-full" src={guest_icon} alt="guest" />
-                    </div>
-                    <div className="eventmanagementscreen_maincontainer_speaker_cards_card_title">
-                      {speaker.name}
-                    </div>
-                    <div className="eventmanagementscreen_maincontainer_speaker_cards_card_subtitle">
-                      {speaker.type}
-                    </div>
-                  </div>
-                );
-              })}
+            <div
+              onClick={() => {
+                setActive("payouts");
+              }}
+              style={active === "payouts" ? { backgroundColor: "gray" } : null}
+              className="eventmanagementscreen_maincontainer_statistics_menu_items"
+            >
+              Manage Payouts
             </div>
           </div>
-        )}
-      </section>
-      <section className="eventmanagementscreen_footer">
-        <div
-          onClick={() => {
-            setBuyTicket(true);
-          }}
-          className="eventmanagementscreen_footer_button"
-        >
-          <img src={ticket_list_icon} alt="ticket" />
-          <div className="eventmanagementscreen_footer_button_text">TICKETS</div>
+          {active === "scan" && (
+            <div className="eventmanagementscreen_maincontainer_statistics_cards flex flex-col">
+              <div className="eventmanagementscreen_maincontainer_statistics_cards_card">
+                <div className="eventmanagementscreen_maincontainer_statistics_cards_card_title">
+                  Open QR Code Scanner to check in folks
+                </div>
+                <div className="eventmanagementscreen_maincontainer_statistics_cards_card_button">
+                  OPEN QR CODE
+                </div>
+              </div>
+              <div className="eventmanagementscreen_maincontainer_statistics_cards_card">
+                <div className="eventmanagementscreen_maincontainer_statistics_cards_card_title">
+                  Start distributing claimables by scanning QR
+                </div>
+                <div className="eventmanagementscreen_maincontainer_statistics_cards_card_button">
+                  OPEN QR CODE
+                </div>
+              </div>
+            </div>
+          )}
+          {active === "payouts" && (
+            <div className="eventmanagementscreen_maincontainer_statistics_payout">
+              <div className="eventmanagementscreen_maincontainer_statistics_payout_menu">
+                <div
+                  onClick={() => {
+                    setPayMethod("polygon");
+                  }}
+                  style={
+                    payMethod === "polygon"
+                      ? { backgroundColor: "purple" }
+                      : null
+                  }
+                  className="eventmanagementscreen_maincontainer_statistics_menu_items"
+                >
+                  Pay by Polygon
+                </div>
+                <div
+                  onClick={() => {
+                    setPayMethod("zkBob");
+                  }}
+                  style={
+                    payMethod === "zkBob" ? { backgroundColor: "purple" } : null
+                  }
+                  className="eventmanagementscreen_maincontainer_statistics_menu_items"
+                >
+                  Pay by ZKBob
+                </div>
+              </div>
+              <input label="Amount"/>
+              <input label="Address"/>
+            </div>
+          )}
         </div>
       </section>
     </article>

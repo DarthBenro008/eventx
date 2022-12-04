@@ -38,6 +38,7 @@
       }
     }
   }
+
   &_banner {
     @apply flex w-full;
     img {
@@ -52,6 +53,64 @@
       line-height: 18px;
       letter-spacing: -0.369089px;
       color: #fc3b7d;
+    }
+    &_statistics {
+      &_menu {
+        @apply flex flex-row justify-between p-2 mb-6 w-full;
+
+        gap: 10px;
+        &_items {
+          @apply w-full justify-center items-center text-center;
+          background: #151515;
+          border-radius: 4px;
+          padding: 12px;
+          border: 1px solid #363636;
+        }
+      }
+      &_cards {
+        gap: 20px;
+        &_card {
+          @apply flex justify-between w-full;
+          background: #141414;
+          /* stroke */
+
+          border: 1px solid #363636;
+          border-radius: 4px;
+          padding: 16px;
+          &_button {
+            background: rgba(114, 63, 255, 0.12);
+            border: 1px solid #723fff;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 161.1%;
+            /* identical to box height, or 21px */
+            width: 90%;
+            letter-spacing: 0.04em;
+
+            color: #723fff;
+            align-items: center;
+            padding: 10px 12px;
+            gap: 10px;
+          }
+        }
+      }
+      &_payout{
+        &_menu {
+        @apply flex flex-row justify-between p-1 mb-6 w-full;
+
+        &_items {
+          @apply w-full justify-center items-center text-center;
+          background: #151515;
+          border-radius: 4px;
+          padding: 12px;
+          border: 1px solid #363636;
+        }
+      }
+      }
     }
     &_title {
       @apply font-bold text-white;
@@ -171,6 +230,5 @@
     }
   }
 }
-.ticketdetailscreen{
-    
+.ticketdetailscreen {
 }

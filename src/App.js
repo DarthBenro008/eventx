@@ -7,6 +7,7 @@ import TicketScreen from "./pages/TicketScreen/TicketScreen";
 import EventCreateScreen from "./pages/EventCreateScreen/EventCreateScreen";
 import MyEventScreen from "./pages/MyEventScreen/MyEventScreen";
 import MyHostedEventScreen from "./pages/MyHostedEventScreen/MyHostedEventScreen";
+import EventManagementScreen from "./pages/MyHostedEventScreen/EventManagementScreen";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path = "/organizer/create" component={EventCreateScreen}/>
         <Route exact path = "/myevents" component = {MyEventScreen}/>
         <Route exact path = "/organizer/events" component = {MyHostedEventScreen}/>
+        <Route exact path = "/organizer/event/:id" component = {EventManagementScreen}/>
 
       </Switch>
       <Footer/>

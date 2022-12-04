@@ -56,7 +56,7 @@ export default function MyHostedEventScreen() {
                   <div
                     onClick={() => {
                       history.push({
-                        pathname: `/ticket/234e444545`,
+                        pathname: `/organizer/event/234e444545`,
                         event: eventsData,
                       });
                     }}
