@@ -17,6 +17,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@web3-react/core": "^6.1.9",
     "autoprefixer": "^10.4.13",
     "ethers": "^5.7.2",
     "ipfs-http-client": "^59.0.0",
