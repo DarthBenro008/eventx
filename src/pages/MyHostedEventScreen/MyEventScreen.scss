@@ -1,0 +1,63 @@
+.myeventscreen {
+  @apply p-8;
+  &_header {
+    @apply flex flex-col;
+    &_subtitle {
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 12px;
+
+      color: #919191;
+    }
+    &_title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+
+      color: #ffffff;
+    }
+  }
+    &_categories {
+    @apply mb-24;
+    &_list {
+      @apply overflow-x-auto flex;
+      &_category {
+        @apply p-2 border-2 mr-2 ml-4 w-96;
+        border-color: #6b6b6b;
+      }
+    }
+    &_cards {
+      @apply flex flex-col;
+    }
+    &_card {
+      @apply w-full flex h-32 my-4;
+      background: #181818;
+      border: 1.2px solid #363636;
+      border-radius: 2px;
+      &_image {
+        @apply w-32 h-32;
+        background-color: burlywood;
+        border-radius: 2px;
+      }
+      &_details {
+        @apply p-2;
+        &_category {
+          font-size: 11px;
+          line-height: 150%;
+          color: #9b9b9b;
+        }
+        &_title {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 150%;
+          color: #ffffff;
+        }
+        &_locdate {
+          @apply flex mt-4;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
